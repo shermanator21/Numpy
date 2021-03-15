@@ -2,13 +2,11 @@ import numpy as np
 import random
 from random import randint
 
-"""
 integers = np.array([1, 2, 3])
 
 print(type(integers))
-"""
 
-"""
+
 # LIST COMPREHENSION
 # create a one-dimensional array from a list comprehension
 # that produces even integers from 2 thorugh 20
@@ -21,23 +19,21 @@ print(integers)
 
 floats = np.array([0.0, 0.1, 0.2, 0.3, 0.4])
 print(floats)
-"""
 
-"""
+
 a = integers.dtype
 b = integers.ndim
 c = integers.shape
 d = integers.size
 
 print()
-"""
 
-"""
+
 for row in integers:
     print(row)
     for column in row:
         print(column, end=" ")
-"""
+
 
 # runs all elements disregarding columns and rows
 """
