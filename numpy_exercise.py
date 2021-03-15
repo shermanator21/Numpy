@@ -52,17 +52,17 @@ print(
 )
 
 print(
-    "Cash Register one sales: "
-    + str(salesArray[0])
+    "Cash Register one sales: $"
+    + str(salesArray[0].sum())
     + "\n"
-    + "Cash Register two sales: "
-    + str(salesArray[1])
+    + "Cash Register two sales: $"
+    + str(salesArray[1].sum())
     + "\n"
-    + "Cash Register three sales: "
-    + str(salesArray[2])
+    + "Cash Register three sales: $"
+    + str(salesArray[2].sum())
     + "\n"
-    + "Cash Register four sales: "
-    + str(salesArray[3])
+    + "Cash Register four sales: $"
+    + str("{0:.2f}".format(salesArray[3].sum()))
 )
 
 print()
@@ -73,6 +73,11 @@ print(
     "-----------------------------------------------   STEP FIVE  -----------------------------------------------"
 )
 
+taxArray = salesArray * 0.02
+
+print("Taxes are: " + "\n" + str(taxArray) + "\n")
+
+print("Total fees are: $" + str("{0:.2f}".format(taxArray.sum())))
 
 print()
 
@@ -81,11 +86,24 @@ print(
     "-----------------------------------------------   STEP SIX  -----------------------------------------------"
 )
 
+profitArray = salesArray - taxArray
+
+print("Profit per sale:\n", profitArray)
+
+
 print()
 
 ## Step 7: Print the sales only for the second and forth cash register
 print(
     "-----------------------------------------------   STEP SEVEN  -----------------------------------------------"
+)
+
+print(
+    "Cash Register two sales: "
+    + str(salesArray[1])
+    + "\n"
+    + "Cash Register four sales: "
+    + str(salesArray[3])
 )
 
 print()
@@ -96,6 +114,10 @@ print(
 )
 newRegister = np.array([17.89, 13.59, 107.89, 176.88, 56.78])
 
+salesArray = np.vstack([salesArray, newRegister])
+
+print(salesArray)
+
 print()
 
 ## Step 9: Register #3 had an error and recorded it's fourth sale ($200.14) incorrectly. The sale should have been $20.14. Update the array to correct this error.
@@ -103,5 +125,11 @@ print()
 print(
     "-----------------------------------------------   STEP NINE  -----------------------------------------------"
 )
+
+print("Old Array\n", salesArray)
+
+salesArray[2, 3] = 20.14
+
+print("Updated Array\n", salesArray)
 
 print()
